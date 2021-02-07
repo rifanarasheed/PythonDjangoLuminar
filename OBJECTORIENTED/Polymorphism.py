@@ -81,7 +81,7 @@ print(obj+obj1+obj2)                   # first by seeing the operator sign,__add
                                        # so when returning it throws error, so we can make returning value as class type, ie, book type in this.
                                        # after that we came accross + again, so __add__() will be invoked.
                                        # to attribute other, 300(obj2) will be passed to pages, and returns added value, ie,300+300 =600,
-                                       # then __str__() is invoked and returns self.pages currently value to print function
+                                       # then __str__() is invoked and returns self.pages currently value to print functiongi
                                        # by this way we can pass any number of arguments.
 
 print(obj1-obj)
