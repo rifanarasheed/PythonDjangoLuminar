@@ -2,10 +2,13 @@
 
 # print employee details whose designation developer --> filter()
 # no of employees as developer --> filter()
-# print employee details who have highest salary
+# print employee details who have highest salary -->map
+# # to print employee whose is having highest and lowest salary with designation = developer -->reduce
 
 # now the text file does not have any format(string),so each line of text file need to make as each object of a class
 # first create a class to intialize instance variable
+
+from functools import reduce
 
 class Employee:
     def __init__(self,eid,ename,edesign,exp,salary):
@@ -35,10 +38,11 @@ for dev in devop:
     print(dev)
 
 # print number of developers in employee list
-count = len(list(filter(lambda emp: emp.edesign=="developer",emplist)))       # or count = len(devop)  -->if we have list of developer exclusively
+count = len(list(filter(lambda emp: emp.edesign=="developer",emplist)))       #  count = len(devop)  -->if we have list of developer exclusively
+print(count)
+
 
 # print employee details who have highest salary
-
 #sallist = []
 #for employee in emplist:
 #    sallist.append(employee.salary)                          # appending the salary
@@ -50,20 +54,28 @@ count = len(list(filter(lambda emp: emp.edesign=="developer",emplist)))       # 
 
 # instead of doing this codes, we can concise code by functional programming
 
-highsal = max(list(map(lambda emp:emp.salary,emplist)))       # using map() to get salary of employee in a list and finding max number from list. all in one single line using lambda
+highsal = max(list(map(lambda emp:emp.salary,emplist)))       # using map() to get salary of employee in a list and finding max number from list. all in one single line using lambda and map()
 print(highsal)
 
-# to print employee whose is having lowest salary with designation = developer
+
+# to print employee whose is having highest and lowest salary with designation = developer
 devlist = []
 for employee in emplist:
     if employee.edesign == "developer":
         devlist.append(employee.salary)
 print(devlist)
-dev_low_sal = min(devlist)
-for emp in emplist:
-    if emp.edesign == "developer":
-        if emp.salary == dev_low_sal:
-            print("developer with low salary :",emp)
+#dev_low_sal = min(devlist)
+#for emp in emplist:
+#    if emp.edesign == "developer":
+#        if emp.salary == dev_low_sal:
+#            print("developer with low salary :",emp)
+
+dev_highsal = reduce(lambda no1,no2: no1 if no1>no2 else no2,devlist)
+print(dev_highsal)
+
+dev_lowsal = reduce(lambda no1,no2: no1 if no1<no2 else no2,devlist)
+print(dev_lowsal)
+
 
 
 

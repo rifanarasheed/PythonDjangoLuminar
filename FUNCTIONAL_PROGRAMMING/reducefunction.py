@@ -9,8 +9,8 @@ from functools import reduce
 
 lst = [10,11,12,13,14]
 
-def sum(num1,num2):
-    return num1+num2
+def sum(num1,num2):                            # 10,11  21,12  33,13.....
+    return num1+num2                           # 21     33      46
 
 sum1 = reduce(sum,lst)
 print("with method : ",sum1)
