@@ -1,6 +1,10 @@
 from re import *
 
-pattern = "[ab]"                  # in square bracket indicate in which position either a or b matches in the string
+# if the rule is given inside the square bracket, it mainly done when giving ranges of character or either one character is checked for matching
+# when there is no sqaure bracket then those character must be a mandatory match,
+
+
+pattern = "[ab]"                  # in square bracket indicate either a or b can be matches in the string
 # pattern = "[a-z]"               # check for only lowercase a to z that matches
 # pattern = "[A-Z]"               # check for only uppercase A to z that matches
 # pattern = "[a-zA-Z]"            # check for only lowercase and uppercases of a to z A to Z that matches
