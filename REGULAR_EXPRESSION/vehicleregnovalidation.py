@@ -1,11 +1,12 @@
 from re import *
 
-reg_no = open("vehicle","r")
+reg = open("vehicle","r")
 
-rule = "kl[0-9]{2}[a-zA-Z]{2}\d{4}"
+rule = "KL[0-9]{2}[a-zA-Z]{2}\d{4}"
 
-for reg in reg_no:
-    if (fullmatch(rule,str(reg))):
-        print(reg," is valid registration number")
+for reg in reg:
+    reg_no = reg.rstrip("\n")
+    if (fullmatch(rule,reg_no)):
+        print(reg_no," is valid registration number")
     else:
-        print(reg," is not a valid registration number")
+        print(reg_no," is not a valid registration number")
