@@ -1,0 +1,18 @@
+html has various tags
+
+< opening tag >  and < closing tag>
+< head tag > and < closing head tag >
+inside head tag, we can give title tag
+<title tag > and < closing title tag >
+to give content to our website, we put them in body tag
+
+
+<html>
+<head>
+   <title>welcome to html</title>
+</head>
+
+<body>
+welcome to html
+</body>
+</html>
